@@ -8,45 +8,50 @@
   <meta name="description" content="Artsom Ouro Preto do Oeste - RO. Pneus, baterias, insulfilm térmico e som automotivo.">
 
   <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+    *{ margin:0; padding:0; box-sizing:border-box; }
 
     body{
       width:100vw;
       height:100vh;
       font-family: Arial, Helvetica, sans-serif;
       overflow:hidden;
-      background:#000; /* fundo preto no PC */
+      background:#000;               /* fundo no PC */
       display:flex;
       align-items:center;
       justify-content:center;
     }
 
-    /* CONTAINER DA ARTE (FORMATO CELULAR) */
+    /* “TELA” DO CELULAR */
     .mobile-wrapper{
       width:100%;
-      max-width:430px;      /* largura padrão celular */
+      max-width:430px;               /* largura típica de celular */
       height:100vh;
       max-height:100vh;
-
-      background-image: url("logo.png");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-
-      display:flex;
-      align-items:flex-end;
-      justify-content:center;
-      padding-bottom:40px;
+      position:relative;
+      background:#000;
+      overflow:hidden;
     }
 
-    /* BOTÕES */
+    /* ARTE SEM CORTAR */
+    .bg{
+      position:absolute;
+      inset:0;
+      background-image:url("logo.png");
+      background-repeat:no-repeat;
+      background-position:center top; /* puxa a arte pra cima */
+      background-size:contain;        /* NÃO CORTA */
+    }
+
+    /* BOTÕES SOBRE A IMAGEM */
     .botoes{
+      position:absolute;
+      left:50%;
+      transform:translateX(-50%);
+      bottom:18%;                     /* SOBE os botões pro “espaço branco” */
       display:flex;
       gap:14px;
+      justify-content:center;
+      z-index:2;
     }
 
     .btn{
@@ -60,26 +65,29 @@
       box-shadow:0 10px 20px rgba(0,0,0,.5);
     }
 
-    .ligar{
-      background:#ffffff;
-      color:#000;
+    .ligar{ background:#ffffff; color:#000; }
+    .whatsapp{ background:#25D366; color:#000; }
+
+    /* TELAS MUITO BAIXAS: sobe um pouco */
+    @media (max-height:700px){
+      .botoes{ bottom:20%; }
     }
 
-    .whatsapp{
-      background:#25D366;
-      color:#000;
+    /* TELAS MAIORES: desce um pouco */
+    @media (min-height:900px){
+      .botoes{ bottom:16%; }
     }
   </style>
 </head>
 
 <body>
-
   <div class="mobile-wrapper">
+    <div class="bg"></div>
+
     <div class="botoes">
       <a href="tel:+5569992585790" class="btn ligar">📞 LIGAR</a>
-      <a href="https://wa.me/5569992585790" class="btn whatsapp">💬 WHATSAPP</a>
+      <a href="https://wa.me/5569992585790" target="_blank" class="btn whatsapp">💬 WHATSAPP</a>
     </div>
   </div>
-
 </body>
 </html>
