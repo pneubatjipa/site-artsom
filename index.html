@@ -21,6 +21,7 @@
       justify-content:center;
     }
 
+    /* “TELA” MOBILE */
     .mobile-wrapper{
       width:100%;
       max-width:430px;
@@ -30,17 +31,17 @@
       overflow:hidden;
     }
 
-    /* ARTE SEM CORTAR */
+    /* ✅ ARTE SEM CORTAR (VOLTOU AO JEITO CERTO) */
     .bg{
       position:absolute;
       inset:0;
       background-image:url("logo.png");
       background-repeat:no-repeat;
-      background-position:center top;
-      background-size:contain;
+      background-position:center;
+      background-size:contain; /* ✅ NÃO CORTA */
     }
 
-    /* BOTÕES NO ESPAÇO BRANCO */
+    /* ✅ BOTÕES TRAVADOS NO CENTRO */
     .botoes{
       position:absolute;
       top:50%;
@@ -52,30 +53,33 @@
       z-index:2;
     }
 
+    /* ✅ DESTRAVA O FLEX PRA NÃO ESTICAR */
+    .botoes a{
+      flex:0 0 auto;
+      width:auto;
+    }
+
+    /* ✅ BOTÕES MENORES (SÓ O QUADRADO) */
     .btn{
-      min-width:140px;         /* menor pra caber */
-      padding:12px 16px;       /* menor pra não tampar */
-      font-size:15px;
-      font-weight:900;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:8px;
+
+      padding:8px 14px;   /* tamanho do quadrado */
+      font-size:16px;
+      font-weight:800;
+
       border-radius:14px;
       text-decoration:none;
       text-align:center;
+      white-space:nowrap;
+
       box-shadow:0 10px 20px rgba(0,0,0,.45);
-      line-height:1.1;
     }
 
     .ligar{ background:#ffffff; color:#000; }
     .whatsapp{ background:#25D366; color:#000; }
-
-    /* se o celular for muito baixinho, sobe um pouco mais */
-    @media (max-height:720px){
-      .botoes{ bottom:32%; }
-    }
-
-    /* se o celular for bem alto, pode descer um tiquinho */
-    @media (min-height:900px){
-      .botoes{ bottom:28%; }
-    }
   </style>
 </head>
 
