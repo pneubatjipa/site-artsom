@@ -15,18 +15,16 @@
       height:100vh;
       font-family: Arial, Helvetica, sans-serif;
       overflow:hidden;
-      background:#000;               /* fundo no PC */
+      background:#000;
       display:flex;
       align-items:center;
       justify-content:center;
     }
 
-    /* “TELA” DO CELULAR */
     .mobile-wrapper{
       width:100%;
-      max-width:430px;               /* largura típica de celular */
+      max-width:430px;
       height:100vh;
-      max-height:100vh;
       position:relative;
       background:#000;
       overflow:hidden;
@@ -38,44 +36,45 @@
       inset:0;
       background-image:url("logo.png");
       background-repeat:no-repeat;
-      background-position:center top; /* puxa a arte pra cima */
-      background-size:contain;        /* NÃO CORTA */
+      background-position:center top;
+      background-size:contain;
     }
 
-    /* BOTÕES SOBRE A IMAGEM */
+    /* BOTÕES NO ESPAÇO BRANCO */
     .botoes{
       position:absolute;
       left:50%;
       transform:translateX(-50%);
-      bottom:18%;                     /* SOBE os botões pro “espaço branco” */
+      bottom:30%;              /* <-- SUBIU (antes era 18%) */
       display:flex;
-      gap:14px;
+      gap:12px;
       justify-content:center;
       z-index:2;
     }
 
     .btn{
-      min-width:150px;
-      padding:14px 18px;
-      font-size:16px;
+      min-width:140px;         /* menor pra caber */
+      padding:12px 16px;       /* menor pra não tampar */
+      font-size:15px;
       font-weight:900;
       border-radius:14px;
       text-decoration:none;
       text-align:center;
-      box-shadow:0 10px 20px rgba(0,0,0,.5);
+      box-shadow:0 10px 20px rgba(0,0,0,.45);
+      line-height:1.1;
     }
 
     .ligar{ background:#ffffff; color:#000; }
     .whatsapp{ background:#25D366; color:#000; }
 
-    /* TELAS MUITO BAIXAS: sobe um pouco */
-    @media (max-height:700px){
-      .botoes{ bottom:20%; }
+    /* se o celular for muito baixinho, sobe um pouco mais */
+    @media (max-height:720px){
+      .botoes{ bottom:32%; }
     }
 
-    /* TELAS MAIORES: desce um pouco */
+    /* se o celular for bem alto, pode descer um tiquinho */
     @media (min-height:900px){
-      .botoes{ bottom:16%; }
+      .botoes{ bottom:28%; }
     }
   </style>
 </head>
