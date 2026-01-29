@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Artsom Ouro Preto - RO | Contato</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Artsom em Ouro Preto - RO. Insulfilm térmico, pneus, baterias com entrega e som automotivo. Ligue ou chame no WhatsApp agora.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Artsom Ouro Preto do Oeste - RO. Pneus, baterias, insulfilm térmico e som automotivo. Ligue ou chame no WhatsApp.">
 
   <style>
     *{
@@ -16,44 +16,43 @@
 
     body{
       height:100vh;
-      margin:0;
       font-family: Arial, Helvetica, sans-serif;
       color:#fff;
-      position: relative;
-      overflow: hidden;
+      overflow:hidden;
 
-      /* FUNDO COM IMAGEM CLARA */
-      background-color:#000;
+      /* IMAGEM DE FUNDO TELA CHEIA */
       background-image: url("logo.png");
-      background-size: contain;
+      background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
+      background-color:#000;
     }
 
-    /* CONTAINER DOS BOTÕES */
-    .botoes-centro{
-      position:absolute;
-      top:70%;
-      left:50%;
-      transform: translate(-50%, -50%);
+    .container{
       width:100%;
-      max-width:520px;
-      padding:0 20px;
+      height:100%;
       display:flex;
-      gap:14px;
-      z-index:1;
+      align-items:center;
+      justify-content:center;
+    }
+
+    .botoes{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+      justify-content:center;
     }
 
     .btn{
-      flex:1;
-      padding:18px 10px;
+      min-width:160px;
+      padding:16px 22px;
       font-size:18px;
       font-weight:900;
       border-radius:16px;
       text-decoration:none;
       text-align:center;
       box-shadow:0 12px 25px rgba(0,0,0,.5);
-      transition:.2s ease;
+      transition:0.2s ease;
     }
 
     .btn:hover{
@@ -70,14 +69,11 @@
       color:#000;
     }
 
-    @media (max-width:420px){
+    @media (max-width:600px){
       .btn{
         font-size:16px;
-        padding:16px 8px;
-      }
-      .botoes-centro{
-        flex-direction:column;
-        top:75%;
+        padding:14px 18px;
+        min-width:140px;
       }
     }
   </style>
@@ -85,20 +81,11 @@
 
 <body>
 
-  <!-- BOTÕES -->
-  <div class="botoes-centro">
-    <a href="tel:+5569992585790" class="btn ligar">
-      📞 LIGAR
-    </a>
-
-    <a
-      href="https://wa.me/556993540455"
-      target="_blank"
-      class="btn whatsapp"
-      rel="noopener"
-    >
-      💬 WHATSAPP
-    </a>
+  <div class="container">
+    <div class="botoes">
+      <a href="tel:+5569992585790" class="btn ligar">📞 LIGAR</a>
+      <a href="https://wa.me/5569992585790" target="_blank" class="btn whatsapp">💬 WHATSAPP</a>
+    </div>
   </div>
 
 </body>
