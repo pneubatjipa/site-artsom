@@ -2,84 +2,91 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Artsom Ouro Preto - RO</title>
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Artsom Ouro Preto do Oeste - RO. Pneus, baterias, insulfilm térmico e som automotivo.">
+
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    *{ margin:0; padding:0; box-sizing:border-box; }
+
+    body{
+      width:100vw;
+      height:100vh;
+      font-family: Arial, Helvetica, sans-serif;
+      overflow:hidden;
+      background:#000;
+      display:flex;
+      align-items:center;
+      justify-content:center;
     }
 
-    body {
-      height: 100vh;
-      background: black;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-family: Arial, sans-serif;
+    .mobile-wrapper{
+      width:100%;
+      max-width:430px;
+      height:100vh;
+      position:relative;
+      background:#000;
+      overflow:hidden;
     }
 
-    .container {
-      position: relative;
-      width: 100%;
-      max-width: 430px; /* largura típica de celular */
-      height: 100vh;
+    /* ARTE SEM CORTAR */
+    .bg{
+      position:absolute;
+      inset:0;
+      background-image:url("logo.png");
+      background-repeat:no-repeat;
+      background-position:center top;
+      background-size:contain;
     }
 
-    .bg {
-      width: 100%;
-      height: 100%;
-      object-fit: cover; /* NÃO corta mais em cima */
-      display: block;
+    /* BOTÕES NO ESPAÇO BRANCO */
+    .botoes{
+      position:absolute;
+      left:50%;
+      transform:translateX(-50%);
+      bottom:40%;              /* <-- SUBIU (antes era 18%) */
+      display:flex;
+      gap:12px;
+      justify-content:center;
+      z-index:2;
     }
 
-    .buttons {
-      position: absolute;
-      bottom: 28%; /* 🔥 AQUI você controla a altura */
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 14px;
+    .btn{
+      min-width:140px;         /* menor pra caber */
+      padding:12px 16px;       /* menor pra não tampar */
+      font-size:15px;
+      font-weight:900;
+      border-radius:14px;
+      text-decoration:none;
+      text-align:center;
+      box-shadow:0 10px 20px rgba(0,0,0,.45);
+      line-height:1.1;
     }
 
-    .btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 14px 22px;
-      border-radius: 14px;
-      font-size: 16px;
-      font-weight: bold;
-      text-decoration: none;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.35);
-      white-space: nowrap;
+    .ligar{ background:#ffffff; color:#000; }
+    .whatsapp{ background:#25D366; color:#000; }
+
+    /* se o celular for muito baixinho, sobe um pouco mais */
+    @media (max-height:720px){
+      .botoes{ bottom:32%; }
     }
 
-    .ligar {
-      background: white;
-      color: black;
-    }
-
-    .whatsapp {
-      background: #25D366;
-      color: black;
+    /* se o celular for bem alto, pode descer um tiquinho */
+    @media (min-height:900px){
+      .botoes{ bottom:28%; }
     }
   </style>
 </head>
 
 <body>
+  <div class="mobile-wrapper">
+    <div class="bg"></div>
 
-  <div class="container">
-    <img src="logo.png" alt="Artsom Ouro Preto" class="bg">
-
-    <div class="buttons">
+    <div class="botoes">
       <a href="tel:+5569992585790" class="btn ligar">📞 LIGAR</a>
-      <a href="https://wa.me/5569992585790" class="btn whatsapp">💬 WHATSAPP</a>
+      <a href="https://wa.me/5569992585790" target="_blank" class="btn whatsapp">💬 WHATSAPP</a>
     </div>
   </div>
-
 </body>
 </html>
