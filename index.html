@@ -2,95 +2,93 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Artsom Ouro Preto - RO</title>
-
+  <title>ARTSOM Ouro Preto - RO | Contato</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Artsom Ouro Preto do Oeste - RO. Pneus, baterias, insulfilm térmico e som automotivo.">
+
+  <meta name="description" content="ARTSOM em Ouro Preto - RO. Pneus, baterias, Insulfilm Térmico e som automotivo. Ligue ou chame no WhatsApp agora.">
 
   <style>
-    *{ margin:0; padding:0; box-sizing:border-box; }
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
     body{
-      width:100vw;
       height:100vh;
+      background:#000;
       font-family: Arial, Helvetica, sans-serif;
-      overflow:hidden;
-      background:#000;
-      display:flex;
-      align-items:flex-start;
-      justify-content:center;
+      color:#fff;
+      position: relative;
+      overflow: hidden;
     }
 
-    /* “TELA” MOBILE */
-    .mobile-wrapper{
+    /* LOGO */
+    .logo{
       width:100%;
-      max-width:430px;
-      height:100vh;
-      position:relative;
-      background:#000;
-      overflow:hidden;
+      max-width:420px;
+      display:block;
+      margin: 24px auto 0;
     }
 
-    /* ✅ ARTE SEM CORTAR (VOLTOU AO JEITO CERTO) */
-    .bg{
-      position:absolute;
-      inset:0;
-      background-image:url("logo.png");
-      background-repeat:no-repeat;
-      background-position:center;
-      background-size:contain; /* ✅ NÃO CORTA */
-    }
-
-    /* ✅ BOTÕES TRAVADOS NO CENTRO */
-    .botoes{
+    /* CONTAINER CENTRAL DOS BOTÕES */
+    .botoes-centro{
       position:absolute;
       top:50%;
       left:50%;
-      transform:translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+      width:100%;
+      max-width:520px;
+      padding:0 20px;
       display:flex;
-      gap:12px;
-      justify-content:center;
-      z-index:2;
+      gap:14px;
     }
 
-    /* ✅ DESTRAVA O FLEX PRA NÃO ESTICAR */
-    .botoes a{
-      flex:0 0 auto;
-      width:auto;
-    }
-
-    /* ✅ BOTÕES MENORES (SÓ O QUADRADO) */
     .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-
-      padding:8px 14px;   /* tamanho do quadrado */
-      font-size:16px;
-      font-weight:800;
-
-      border-radius:14px;
+      flex:1;
+      padding:18px 10px;
+      font-size:18px;
+      font-weight:900;
+      border-radius:16px;
       text-decoration:none;
       text-align:center;
-      white-space:nowrap;
-
-      box-shadow:0 10px 20px rgba(0,0,0,.45);
+      box-shadow:0 12px 25px rgba(0,0,0,.6);
+      transition:.2s ease;
     }
 
-    .ligar{ background:#ffffff; color:#000; }
-    .whatsapp{ background:#25D366; color:#000; }
+    .btn:hover{
+      transform: translateY(-2px);
+    }
+
+    .ligar{
+      background:#ffffff;
+      color:#000;
+    }
+
+    .whatsapp{
+      background:#25D366;
+      color:#000;
+    }
+
+    @media (max-width:420px){
+      .btn{
+        font-size:16px;
+        padding:16px 8px;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <div class="mobile-wrapper">
-    <div class="bg"></div>
 
-    <div class="botoes">
-      <a href="tel:+5569992585790" class="btn ligar">📞 LIGAR</a>
-      <a href="https://wa.me/5569992585790" target="_blank" class="btn whatsapp">💬 WHATSAPP</a>
-    </div>
+  <!-- LOGO (pode ser 1080x1920 sem problema) -->
+  <img src="logo.png" alt="ARTSOM" class="logo">
+
+  <!-- BOTÕES SEMPRE NO CENTRO -->
+  <div class="botoes-centro">
+    <a href="tel:+5569992585790" class="btn ligar">📞 LIGAR</a>
+    <a href="https://wa.me/5569992585790" target="_blank" class="btn whatsapp">💬 WHATSAPP</a>
   </div>
+
 </body>
 </html>
